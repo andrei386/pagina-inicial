@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Wars</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <a href="#">Início</a>
+    <a href="#">Filmes</a>
+    <a href="#">Personagens</a>
+    <a href="#">Contato</a>
+  </aside>
+
+  <header class="header">
+    <div class="header-content">
+      <button class="menu-btn" id="menuBtn">☰</button>
+
+      <h1 class="logo-topo">STAR WARS</h1>
+
+      <a
+        href="https://www.ingresso.com/"
+        target="_blank"
+        class="btn-ingresso"
+      >
+        Comprar Ingressos
+      </a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <img
+      src="millennium-falcon.jpg"
+      alt="Millennium Falcon"
+      class="hero-bg"
+    >
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-title">
+      <span>STAR</span>
+      <span>WARS</span>
+    </div>
+  </section>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    menuBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+      overlay.classList.toggle("show");
+    });
+
+    overlay.addEventListener("click", () => {
+      sidebar.classList.remove("active");
+      overlay.classList.remove("show");
+    });
+  </script>
+
+</body>
+</html>

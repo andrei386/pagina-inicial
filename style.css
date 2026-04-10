@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.header-content {
+  height: 64px;
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-btn {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.logo-topo {
+  color: #fff;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.btn-ingresso {
+  text-decoration: none;
+  background: #c7e600;
+  color: #111;
+  font-weight: bold;
+  font-size: 0.95rem;
+
+  padding: 12px 18px;
+  border-radius: 3px;
+
+  transition: 0.3s;
+}
+
+.btn-ingresso:hover {
+  background: #e2ff38;
+  transform: scale(1.05);
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center center;
+
+  filter: brightness(0.55);
+  transform: scale(1.03);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.08),
+    rgba(0, 0, 0, 0.25)
+  );
+
+  z-index: 1;
+}
+
+/* TEXTO CENTRAL */
+.hero-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  line-height: 0.9;
+}
+
+.hero-title span {
+  font-size: clamp(4rem, 10vw, 9rem);
+
+  color: transparent;
+  -webkit-text-stroke: 3px rgba(255, 255, 255, 0.95);
+
+  text-shadow:
+    0 0 12px rgba(255, 255, 255, 0.1),
+    0 0 24px rgba(255, 255, 255, 0.08);
+}
+
+/* MENU LATERAL */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px;
+
+  width: 280px;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.96);
+  padding: 90px 30px;
+
+  z-index: 120;
+  transition: left 0.3s ease;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar a {
+  display: block;
+  margin-bottom: 22px;
+
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.15rem;
+}
+
+/* FUNDO ESCURO MENU */
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  opacity: 0;
+  visibility: hidden;
+
+  z-index: 110;
+  transition: 0.3s;
+}
+
+.overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 16px;
+  }
+
+  .logo-topo {
+    font-size: 0.8rem;
+  }
+
+  .btn-ingresso {
+    font-size: 0.75rem;
+    padding: 10px 12px;
+  }
+
+  .hero-title span {
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.95);
+  }
+}
